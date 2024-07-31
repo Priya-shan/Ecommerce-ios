@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
-
+import ComposableArchitecture
 @main
 struct EcommerceApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            HomePageView(store: Store(initialState: HomePageFeature.State(), reducer: {HomePageFeature()}))
+            AppView(store: Store(initialState: AppFeature.State(), reducer: {
+                AppFeature()
+            }))
         }
     }
 }
